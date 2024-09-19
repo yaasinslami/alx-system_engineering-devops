@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+LINES=$(ls)
+
+for line in "${LINES[@]}"
+do
+	echo "${line}" | cut -d'-' -f2
+done
