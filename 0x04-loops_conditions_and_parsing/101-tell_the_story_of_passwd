@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#  Bash script that displays the content of the file /etc/passwd
+#  using the while loop + IFS.
+#  Format:	The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL.
+#			USER ID's place is protected by the passcode PASSWORD, more info about the user here: USER ID INFO
+
+while IFS=':' read -r -a fields
+do
+	echo "The user ${fields[0]} is part of the ${fields[3]} gang, lives in ${fields[5]} and rides ${fields[6]}. ${fields[2]}'s place is protected by the passcode ${fields[1]}, more info about the user here: ${fields[4]}"
+
+done < /etc/passwd
