@@ -3,5 +3,5 @@
 
 logfile="apache-access.log"
 
-awk '{ip_count[$1 " " $9]++} END {for (key in ip_count) print "    " ip_count[key], key}' "$logfile" | sort| sort -nr
-#awk '{ print $1 " " $9}' "$logfile" | sort | uniq -c | sort -rn
+#awk '{ip_count[$1 " " $9]++} END {for (key in ip_count) print "    " ip_count[key], key}' "$logfile" | sort| sort -nr
+awk '{ print $1 " " $9}' "$logfile" | sort | uniq -c | sort -rn
